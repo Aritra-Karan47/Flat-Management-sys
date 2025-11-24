@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to Dashboard</h1>
+{% if is_admin %}
+    <p>Admin: Manage everything.</p>
+    <a href="/admin/" class="bg-green-500 text-white px-4 py-2 rounded">Admin Panel</a>
+{% else %}
+    <p>Resident: Raise complaints below.</p>
+{% endif %}
+<a href="{% url 'complaint_list' %}" class="bg-blue-500 text-white px-4 py-2 rounded">View Complaints</a>
+{% endblock %}
